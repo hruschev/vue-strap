@@ -107,10 +107,10 @@ export default {
     }
     this.$dispatch('child-created', this)
     this.currDate = this.parse(this.value) || this.parse(new Date())
-    $(window).on('click', this._blur)
+    window.addEventListener('click', this._blur)
   },
   beforeDestroy () {
-    $(window).off('click', this._blur)
+    window.removeEventListener('click', this._blur)
   },
   data () {
     return {
